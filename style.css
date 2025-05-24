@@ -36,6 +36,7 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -71,7 +72,6 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-14/section01-bg.png') center/cover;
     opacity: 0.1;
 }
 
@@ -118,11 +118,6 @@ nav a:hover {
     padding: 2rem;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.product-card:hover {
-    transform: translateY(-4px);
 }
 
 .product-card img {
@@ -161,6 +156,39 @@ nav a:hover {
     background: #ff8533;
 }
 
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    background: #ff6900;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    background: #ff8533;
+    transform: translateY(-3px);
+}
+
 /* About Section */
 #about {
     background: #f5f5f5;
@@ -172,6 +200,79 @@ nav a:hover {
     margin: 0 auto;
     text-align: center;
     color: #333333;
+}
+
+/* FAQ Accordion Section */
+#faq {
+    padding: 4rem 5%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#faq h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 2rem;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion-item {
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1rem;
+    background: #ffffff;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f5f5f5;
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+.accordion-item.active .accordion-content {
+    padding: 1rem;
+    max-height: 500px;
+}
+
+.accordion-content p {
+    margin: 0;
+    color: #666666;
+    line-height: 1.6;
 }
 
 /* Contact Section */
@@ -202,6 +303,7 @@ input, textarea {
     border: 1px solid #dddddd;
     border-radius: 4px;
     font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
 textarea {
@@ -219,6 +321,7 @@ button {
     font-weight: 500;
     cursor: pointer;
     width: 100%;
+    transition: background 0.3s ease;
 }
 
 button:hover {
@@ -263,5 +366,10 @@ footer {
 
     .products-grid {
         grid-template-columns: 1fr;
+    }
+
+    #backToTop {
+        bottom: 10px;
+        right: 10px;
     }
 } 
